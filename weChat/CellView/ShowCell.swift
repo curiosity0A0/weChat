@@ -15,6 +15,13 @@ class ShowCell: UICollectionViewCell {
     
     func generate(cellString:String){
         
+        if cellString == "5" {
+            
+            uiimage.image = UIImage(named: cellString)
+            uiimage.contentMode = .scaleAspectFill
+        }
+        
+        
         uiimage.image = UIImage(named: cellString)
     }
     

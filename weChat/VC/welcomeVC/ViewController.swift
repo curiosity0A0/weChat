@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate{
  
@@ -15,7 +16,7 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
     
     @IBOutlet weak var pageView: UIPageControl!
     
-    var collectionImage = ["1","2","3"]
+    var collectionImage = ["5","1","2"]
 
     @IBOutlet weak var collectionView: UICollectionView!
    
@@ -55,6 +56,11 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
     }
     
     
+    @IBAction func gotoLogin(_ sender: Any) {
+       
+        performSegue(withIdentifier: "gotoLogin", sender: self)
+        
+    }
     
     
     

@@ -566,7 +566,7 @@ worry all of features are free!</string>
                                                         <constraint firstAttribute="width" constant="100" id="T56-82-AEb"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGt-ct-tdQ">
@@ -613,6 +613,10 @@ worry all of features are free!</string>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="myN-vf-No5" id="yYc-pl-kWl"/>
+                                    <outlet property="delegate" destination="myN-vf-No5" id="00E-ow-Luq"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -631,6 +635,9 @@ worry all of features are free!</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="0vj-NZ-ZmS" id="f30-Jw-8kM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAh-lr-b1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -864,6 +871,21 @@ worry all of features are free!</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LZW-Sr-V0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6861.6000000000004" y="-124.13793103448276"/>
+        </scene>
+        <!--Messages View Controller-->
+        <scene sceneID="pm4-fa-oBc">
+            <objects>
+                <viewController id="gTs-nh-Voj" customClass="JSQMessagesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GvA-8U-Y2W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="qwb-Z6-fyO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RrR-9D-m8C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8393" y="-142"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iLS-6E-EDv">

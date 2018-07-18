@@ -78,7 +78,7 @@ func timeElapsed(date: Date) -> String {
         if minutes > 1 {
             minText = "mins"
         }
-        elapsed = "\(minutes) \(minText)"
+        elapsed = "\(minutes) \(minText) ago"
 
     } else if (seconds < 24 * 60 * 60) {
         let hours = Int(seconds / (60 * 60))
@@ -86,7 +86,7 @@ func timeElapsed(date: Date) -> String {
         if hours > 1 {
             hourText = "hours"
         }
-        elapsed = "\(hours) \(hourText)"
+        elapsed = "\(hours) \(hourText) ago"
     } else {
         let currentDateFormater = dateFormatter()
         currentDateFormater.dateFormat = "dd/MM/YYYY"

@@ -15,11 +15,15 @@
 		8820F8A320F7BBE600807B3F /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820F8A220F7BBE600807B3F /* ShowCell.swift */; };
 		8857FCE120FDA60400E7C365 /* UserTabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857FCE020FDA60400E7C365 /* UserTabelCell.swift */; };
 		8857FCE320FDAA3800E7C365 /* UsersTabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857FCE220FDAA3800E7C365 /* UsersTabelViewController.swift */; };
+		8885EC142106464000A87315 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885EC132106464000A87315 /* Camera.swift */; };
 		88B0B85B20FE12EB00DE5C63 /* Recent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B0B85A20FE12EB00DE5C63 /* Recent.swift */; };
 		88B0B85D20FE1F4100DE5C63 /* RecentChatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B0B85C20FE1F4100DE5C63 /* RecentChatsCell.swift */; };
 		88BBE6C520FF6B7700A6EF7B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BBE6C420FF6B7700A6EF7B /* ChatViewController.swift */; };
 		88C8749D20FC4ACF00CB5BC6 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C8749C20FC4ACF00CB5BC6 /* LoginPage.swift */; };
+		88D07ACC21079BCF008708C7 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07ACB21079BCF008708C7 /* Download.swift */; };
 		88E201E820FC53E900DF2740 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88E201E720FC53E900DF2740 /* GoogleService-Info.plist */; };
+		88EEF6C32101C33E00BD248B /* outgoingMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEF6C22101C33E00BD248B /* outgoingMessages.swift */; };
+		88EEF6C52101D93D00BD248B /* incomingMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEF6C42101D93D00BD248B /* incomingMessages.swift */; };
 		88F3EBDD20FDB96700C2217A /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3EBDC20FDB96700C2217A /* ChatsViewController.swift */; };
 		88F3EBDF20FDF8A100C2217A /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F3EBDE20FDF8A100C2217A /* ProfileTableViewController.swift */; };
 		88FDEBE220FC576B00264FED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88FDEBE120FC576B00264FED /* Assets.xcassets */; };
@@ -42,11 +46,15 @@
 		8820F8A220F7BBE600807B3F /* ShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCell.swift; sourceTree = "<group>"; };
 		8857FCE020FDA60400E7C365 /* UserTabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabelCell.swift; sourceTree = "<group>"; };
 		8857FCE220FDAA3800E7C365 /* UsersTabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTabelViewController.swift; sourceTree = "<group>"; };
+		8885EC132106464000A87315 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		88B0B85A20FE12EB00DE5C63 /* Recent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recent.swift; sourceTree = "<group>"; };
 		88B0B85C20FE1F4100DE5C63 /* RecentChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentChatsCell.swift; sourceTree = "<group>"; };
 		88BBE6C420FF6B7700A6EF7B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		88C8749C20FC4ACF00CB5BC6 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		88D07ACB21079BCF008708C7 /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
 		88E201E720FC53E900DF2740 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		88EEF6C22101C33E00BD248B /* outgoingMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outgoingMessages.swift; sourceTree = "<group>"; };
+		88EEF6C42101D93D00BD248B /* incomingMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = incomingMessages.swift; sourceTree = "<group>"; };
 		88F3EBDC20FDB96700C2217A /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		88F3EBDE20FDF8A100C2217A /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		88FDEBE120FC576B00264FED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
@@ -178,6 +186,8 @@
 			children = (
 				88FDEBE420FC5A3B00264FED /* Fuser.swift */,
 				88B0B85A20FE12EB00DE5C63 /* Recent.swift */,
+				88EEF6C22101C33E00BD248B /* outgoingMessages.swift */,
+				88EEF6C42101D93D00BD248B /* incomingMessages.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +198,8 @@
 				88FDEBE620FC5B5000264FED /* FCollectionReference.swift */,
 				88FDEBE820FC5B7200264FED /* Constants.swift */,
 				88FDEBEB20FC5BC100264FED /* HelperFunctions.swift */,
+				8885EC132106464000A87315 /* Camera.swift */,
+				88D07ACB21079BCF008708C7 /* Download.swift */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -344,8 +356,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				88F3EBDF20FDF8A100C2217A /* ProfileTableViewController.swift in Sources */,
+				88EEF6C32101C33E00BD248B /* outgoingMessages.swift in Sources */,
 				88FDEBE720FC5B5000264FED /* FCollectionReference.swift in Sources */,
 				8857FCE120FDA60400E7C365 /* UserTabelCell.swift in Sources */,
+				88EEF6C52101D93D00BD248B /* incomingMessages.swift in Sources */,
 				8857FCE320FDAA3800E7C365 /* UsersTabelViewController.swift in Sources */,
 				88B0B85D20FE1F4100DE5C63 /* RecentChatsCell.swift in Sources */,
 				88FDEBEC20FC5BC100264FED /* HelperFunctions.swift in Sources */,
@@ -353,10 +367,12 @@
 				88FDEBE520FC5A3B00264FED /* Fuser.swift in Sources */,
 				88FDEBEE20FC6C7900264FED /* ProfileVC.swift in Sources */,
 				88FDEBF020FD00D500264FED /* settings.swift in Sources */,
+				88D07ACC21079BCF008708C7 /* Download.swift in Sources */,
 				88C8749D20FC4ACF00CB5BC6 /* LoginPage.swift in Sources */,
 				88BBE6C520FF6B7700A6EF7B /* ChatViewController.swift in Sources */,
 				8820F8A320F7BBE600807B3F /* ShowCell.swift in Sources */,
 				88FDEBE920FC5B7200264FED /* Constants.swift in Sources */,
+				8885EC142106464000A87315 /* Camera.swift in Sources */,
 				8820F89320F7BAF400807B3F /* ViewController.swift in Sources */,
 				88B0B85B20FE12EB00DE5C63 /* Recent.swift in Sources */,
 				8820F89120F7BAF400807B3F /* AppDelegate.swift in Sources */,

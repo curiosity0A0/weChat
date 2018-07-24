@@ -16,7 +16,7 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
     
     @IBOutlet weak var pageView: UIPageControl!
     
-    var collectionImage = ["5","1","2"]
+    var collectionImage = ["5","6","7"]
 
     @IBOutlet weak var collectionView: UICollectionView!
    
@@ -54,6 +54,13 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
         
         pageView.currentPage = Int(pageNumber)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    
+    
     
     
     @IBAction func gotoLogin(_ sender: Any) {

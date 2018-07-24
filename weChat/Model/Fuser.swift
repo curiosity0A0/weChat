@@ -183,7 +183,7 @@ class FUser {
         Auth.auth().signIn(withEmail: email, password: password, completion: { (firUser, error) in
             
             if error != nil {
-                
+                    print(error?.localizedDescription)
                 completion(error)
                 return
                 

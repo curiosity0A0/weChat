@@ -146,22 +146,17 @@ class LoginPage: UIViewController{
         ProgressHUD.show("Loading...")
         FUser.loginUserWith(email: emailTextField.text!, password: passwordTextField.text!) { (error) in
             if error != nil {
-                
-                
-                DispatchQueue.main.async {
+
+                ProgressHUD.dismiss()
                 self.alert(Message: error!.localizedDescription)
-                }
-              
+                return
             }
             
             DispatchQueue.main.async {
-               
                 self.goToApp()
-                
             }
-       
-    
             
+
         }
         
     }

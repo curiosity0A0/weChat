@@ -99,6 +99,7 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - SVProgressHUD (2.2.2)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -111,6 +112,7 @@ DEPENDENCIES:
   - JSQMessagesViewController (= 7.3.3)
   - MBProgressHUD
   - ProgressHUD
+  - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -142,6 +144,7 @@ SPEC REPOS:
     - Protobuf
     - SCSiriWaveformView
     - SDWebImage
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   BoringSSL: 19083b821ef3ae0f758fae15482e183003b1e265
@@ -172,7 +175,8 @@ SPEC CHECKSUMS:
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
   SCSiriWaveformView: 15b9dd6f94c7536e2032b34a35c6ff74d38c7411
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
 
-PODFILE CHECKSUM: 23592c7c2b8f38836283867aefc0c01c3880688d
+PODFILE CHECKSUM: 77d5d229cbbb608a09ee1ed6bdbe3d3dec1e2e80
 
 COCOAPODS: 1.5.3

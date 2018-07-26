@@ -35,10 +35,10 @@ class incomingMessage {
            message = createTextMessag(messageDictionary: messageDictionary, chatRoomId: chatRoomId)
         case kPICTURE:
         //create picture maeesage
-              print("create picture maeesage")
+            message = createPictureMessage(messageDictionary: messageDictionary)
         case kVIDEO:
         //create video maeesage
-            print("create video maeesage")
+           message = createVideoMessage(messageDictionary: messageDictionary)
         case kAUDIO:
         //create audio maeesage
               print(" //create audio maeesage")
@@ -81,5 +81,85 @@ class incomingMessage {
     }
     
     
+    func createPictureMessage(messageDictionary: NSDictionary) -> JSQMessage {
+        let name = messageDictionary[kSENDERNAME] as? String
+        let userid = messageDictionary[kSENDERID] as? String
+        
+        var date: Date!
+        
+        if let created = messageDictionary[kDATE] {
+            if (created as! String).count != 14 {
+                date = Date()
+            }else{
+                date = dateFormatter().date(from: created as! String)
+            }
+        }else{
+            
+            date = Date()
+        }
+        let mediaItem = PhotoMediaItem(image:nil)
+            mediaItem?.appliesMediaViewMaskAsOutgoing = retureOutgoingStatusForUser(senderId: userid!)
+//
+        downLoadImage(ImageuUrl: messageDictionary[kPICTURE] as! String) { (image) in
+            
+            if image != nil {
+                mediaItem?.image = image
+                self.collectionView.reloadData()
+            }
+        }
+        
+        return JSQMessage(senderId: userid, senderDisplayName: name, date: date, media: mediaItem)
+    }
+    
+    
+    func createVideoMessage(messageDictionary: NSDictionary) -> JSQMessage {
+        let name = messageDictionary[kSENDERNAME] as? String
+        let userid = messageDictionary[kSENDERID] as? String
+        
+        var date: Date!
+        
+        if let created = messageDictionary[kDATE] {
+            if (created as! String).count != 14 {
+                date = Date()
+            }else{
+                date = dateFormatter().date(from: created as! String)
+            }
+        }else{
+            
+            date = Date()
+        }
+        
+        let videoURL = NSURL(fileURLWithPath: messageDictionary[kVIDEO] as! String)
+
+        let mediaItem = VideoMessage(withFileURL: videoURL, maskOutgoing: retureOutgoingStatusForUser(senderId: userid!))
+
+        downLoadVideo(videoURL: messageDictionary[kVIDEO] as! String) { (isReadyToPlay, fileName) in
+            
+            let url = NSURL(fileURLWithPath: fileInDocumentsDirectory(fileName: fileName))
+            mediaItem.status = kSUCCESS
+            mediaItem.fileURL = url
+            imageFromData(pictureData: messageDictionary["thumbnail"] as! String, withBlock: { (image) in
+              
+                if image != nil {
+                    mediaItem.image = image!
+                    self.collectionView.reloadData()
+                }
+           
+                
+            })
+            
+            self.collectionView.reloadData()
+        }
+        
+        return JSQMessage(senderId: userid, senderDisplayName: name, date: date, media: mediaItem)
+    }
+    
+
+    
+    //MARK: Helper
+    func retureOutgoingStatusForUser(senderId: String) -> Bool {
+     
+        return senderId == FUser.currentId()
+    }
     
 }

@@ -262,17 +262,19 @@ class ChatViewController: JSQMessagesViewController, UIGestureRecognizerDelegate
         let opeitonMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let takePhotoOrVideo = UIAlertAction(title: "Camera", style: .default) { (action) in
-       
-            print("Camera")
+           
+            camera.PresentMultyCamera(target: self, canEdit: false)
+         
         }
         let sharePhote = UIAlertAction(title: "Phote Libaray", style: .default) { (action) in
             camera.PresentPhotoLibrary(target: self, canEdit: false)
             
-            print(" Phote Libaray")
+           
         }
         
         let shareVideo = UIAlertAction(title: "Video Libaray", style: .default) { (action) in
-            print("Video Libaray")
+            camera.PresentVideoLibrary(target: self, canEdit: false)
+         
         }
         
         let shareLocaiton = UIAlertAction(title: "Share Location", style: .default) { (action) in
@@ -342,7 +344,44 @@ class ChatViewController: JSQMessagesViewController, UIGestureRecognizerDelegate
         
     }
     
-    
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, didTapMessageBubbleAt indexPath: IndexPath!) {
+     
+        
+        let messageDictionary = objectMessage[indexPath.row]
+        let messageType = messageDictionary[kTYPE] as! String
+        switch messageType {
+        case kPICTURE:
+               print("tap message at \(indexPath)")
+            let message = messages[indexPath.row]
+            let mediaItem = message.media as! JSQPhotoMediaItem
+            let photos = IDMPhoto.photos(withImages: [mediaItem.image])
+            let browser = IDMPhotoBrowser(photos: photos)
+            
+            self.present(browser!, animated: true, completion: nil)
+            
+            
+        case kLOCATION:
+            print("kLOCATION mess tapped")
+            
+        case kVIDEO:
+           print("video mess tapped")
+            let message = messages[indexPath.row]
+            let mediaItem = message.media as! VideoMessage
+            let player = AVPlayer(url: mediaItem.fileURL! as! URL)
+            let moviewPlayer = AVPlayerViewController()
+            
+            let session = AVAudioSession.sharedInstance()
+            
+            try! session.setCategory(.playAndRecord, mode: .default, options: .defaultToSpeaker)
+            moviewPlayer.player = player
+           self.present(moviewPlayer, animated: true) {
+                moviewPlayer.player!.play()
+            }
+            
+        default:
+            print("unknow message tapped")
+        }
+    }
     
     
     
@@ -366,9 +405,9 @@ class ChatViewController: JSQMessagesViewController, UIGestureRecognizerDelegate
                 
                 if imageLink != nil {
                     
-                    let text = kPICTURE
+                    let text = "[\(kPICTURE)]"
                     
-                    outgoingMessage = OutgoingMessages(message: "", pictureLink: imageLink!, senderId: FUser.currentId(), senderName: FUser.currentUser()!.fullname, date: date, status: kDELIVERED, type: kPICTURE)
+                    outgoingMessage = OutgoingMessages(message: text, pictureLink: imageLink!, senderId: FUser.currentId(), senderName: FUser.currentUser()!.fullname, date: date, status: kDELIVERED, type: kPICTURE)
                         JSQSystemSoundPlayer.jsq_playMessageSentSound()
                     self.finishSendingMessage()
                     outgoingMessage?.sendMessage(chatRoomId: self.chatRoomId, messageDictionary: outgoingMessage!.messageDictionary, memberIds: self.memberids, memberToPush: self.memberidsToPush)
@@ -377,6 +416,29 @@ class ChatViewController: JSQMessagesViewController, UIGestureRecognizerDelegate
             }
             return
         }
+        
+        
+        if let video = video {
+            
+            
+            let videoData = NSData(contentsOfFile: video.path!)
+            let thumbnail = videoThumbnail(video: video).jpegData(compressionQuality: 0.3)
+            uploadVideo(Video: videoData!, chatRoomId: chatRoomId, view: self.navigationController!.view) { (videoLink) in
+                
+                if videoLink != nil {
+                    let text = "[\(kVIDEO)]"
+                    outgoingMessage = OutgoingMessages(message: text, video: videoLink!, senderId: FUser.currentId(), senderName: FUser.currentUser()!.fullname, date: Date(), status: kDELIVERED, type: kVIDEO, thumNail: thumbnail as! NSData)
+                    JSQSystemSoundPlayer.jsq_playMessageSentSound()
+                    self.finishSendingMessage()
+                    outgoingMessage?.sendMessage(chatRoomId: self.chatRoomId, messageDictionary:(outgoingMessage?.messageDictionary)!, memberIds: self.memberids, memberToPush: self.memberidsToPush)
+                }
+            }
+            return
+        }
+        
+        
+        
+        
         
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
         self.finishSendingMessage()
@@ -701,9 +763,9 @@ class ChatViewController: JSQMessagesViewController, UIGestureRecognizerDelegate
         
     }
     
-    //MARK : Helper func
+    //MARK : -Helper func
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {   //GOD..
         
         let video = info[UIImagePickerController.InfoKey.mediaURL] as? NSURL
         let picture = info[UIImagePickerController.InfoKey.originalImage] as? UIImage

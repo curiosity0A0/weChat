@@ -9,6 +9,7 @@
 import UIKit
 import ProgressHUD
 import Firebase
+import SVProgressHUD
 
 class LoginPage: UIViewController{
 
@@ -83,18 +84,19 @@ class LoginPage: UIViewController{
             
         case 1:
              dismissKeyboard()
+             SVProgressHUD.show()
             if emailTextField.text != "" && passwordTextField.text != ""  && comfirmTextField.text != ""  {
                 if comfirmTextField.text == passwordTextField.text && (passwordTextField.text?.count)! >= 8{
         
                     registerUser()
                     
                 }else{
-                    
+                    SVProgressHUD.dismiss()
                     alert(Message: "Passwords and confirm are not same or passwords need to be 8+ characters")
                 }
              
             }else{
-                
+                SVProgressHUD.dismiss()
                 alert(Message: "Please enter all field." )
             }
          
@@ -177,7 +179,8 @@ class LoginPage: UIViewController{
     
     func registerUser(){
        performSegue(withIdentifier: "goToProfile", sender: self)
-        ProgressHUD.dismiss()
+       SVProgressHUD.dismiss()
+       
          dismissKeyboard()
         cleanTextField()
         

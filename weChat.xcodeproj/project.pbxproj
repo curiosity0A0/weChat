@@ -13,6 +13,7 @@
 		8820F89620F7BAF400807B3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8820F89420F7BAF400807B3F /* Main.storyboard */; };
 		8820F89B20F7BAF400807B3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8820F89920F7BAF400807B3F /* LaunchScreen.storyboard */; };
 		8820F8A320F7BBE600807B3F /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820F8A220F7BBE600807B3F /* ShowCell.swift */; };
+		8856FD7B2108EF0400360F9D /* PhotoMediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8856FD7A2108EF0400360F9D /* PhotoMediaItem.swift */; };
 		8857FCE120FDA60400E7C365 /* UserTabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857FCE020FDA60400E7C365 /* UserTabelCell.swift */; };
 		8857FCE320FDAA3800E7C365 /* UsersTabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857FCE220FDAA3800E7C365 /* UsersTabelViewController.swift */; };
 		8885EC142106464000A87315 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885EC132106464000A87315 /* Camera.swift */; };
@@ -21,6 +22,7 @@
 		88BBE6C520FF6B7700A6EF7B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BBE6C420FF6B7700A6EF7B /* ChatViewController.swift */; };
 		88C8749D20FC4ACF00CB5BC6 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C8749C20FC4ACF00CB5BC6 /* LoginPage.swift */; };
 		88D07ACC21079BCF008708C7 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07ACB21079BCF008708C7 /* Download.swift */; };
+		88D8EF86210A59CD00521CAD /* videoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D8EF85210A59CD00521CAD /* videoMessage.swift */; };
 		88E201E820FC53E900DF2740 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88E201E720FC53E900DF2740 /* GoogleService-Info.plist */; };
 		88EEF6C32101C33E00BD248B /* outgoingMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEF6C22101C33E00BD248B /* outgoingMessages.swift */; };
 		88EEF6C52101D93D00BD248B /* incomingMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEF6C42101D93D00BD248B /* incomingMessages.swift */; };
@@ -44,6 +46,7 @@
 		8820F89A20F7BAF400807B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8820F89C20F7BAF400807B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8820F8A220F7BBE600807B3F /* ShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCell.swift; sourceTree = "<group>"; };
+		8856FD7A2108EF0400360F9D /* PhotoMediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMediaItem.swift; sourceTree = "<group>"; };
 		8857FCE020FDA60400E7C365 /* UserTabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabelCell.swift; sourceTree = "<group>"; };
 		8857FCE220FDAA3800E7C365 /* UsersTabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTabelViewController.swift; sourceTree = "<group>"; };
 		8885EC132106464000A87315 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		88BBE6C420FF6B7700A6EF7B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		88C8749C20FC4ACF00CB5BC6 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		88D07ACB21079BCF008708C7 /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
+		88D8EF85210A59CD00521CAD /* videoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoMessage.swift; sourceTree = "<group>"; };
 		88E201E720FC53E900DF2740 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		88EEF6C22101C33E00BD248B /* outgoingMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outgoingMessages.swift; sourceTree = "<group>"; };
 		88EEF6C42101D93D00BD248B /* incomingMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = incomingMessages.swift; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				88B0B85A20FE12EB00DE5C63 /* Recent.swift */,
 				88EEF6C22101C33E00BD248B /* outgoingMessages.swift */,
 				88EEF6C42101D93D00BD248B /* incomingMessages.swift */,
+				8856FD7A2108EF0400360F9D /* PhotoMediaItem.swift */,
+				88D8EF85210A59CD00521CAD /* videoMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -294,6 +300,7 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SCSiriWaveformView/SCSiriWaveformView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
@@ -317,6 +324,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSiriWaveformView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
@@ -365,8 +373,10 @@
 				88FDEBEC20FC5BC100264FED /* HelperFunctions.swift in Sources */,
 				88F3EBDD20FDB96700C2217A /* ChatsViewController.swift in Sources */,
 				88FDEBE520FC5A3B00264FED /* Fuser.swift in Sources */,
+				8856FD7B2108EF0400360F9D /* PhotoMediaItem.swift in Sources */,
 				88FDEBEE20FC6C7900264FED /* ProfileVC.swift in Sources */,
 				88FDEBF020FD00D500264FED /* settings.swift in Sources */,
+				88D8EF86210A59CD00521CAD /* videoMessage.swift in Sources */,
 				88D07ACC21079BCF008708C7 /* Download.swift in Sources */,
 				88C8749D20FC4ACF00CB5BC6 /* LoginPage.swift in Sources */,
 				88BBE6C520FF6B7700A6EF7B /* ChatViewController.swift in Sources */,

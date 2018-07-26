@@ -27,6 +27,14 @@ class OutgoingMessages {
         
     }
  
+    //video message
+
+    init(message: String, video: String, senderId: String , senderName: String , date:Date , status: String , type: String ,thumNail: NSData) {
+      
+        let picThumb = thumNail.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+        messageDictionary = NSMutableDictionary(objects: [message,video,senderId,senderName,dateFormatter().string(from: date),status,type ,picThumb], forKeys: [kMESSAGE as! NSCopying,kVIDEO as! NSCopying,kSENDERID as! NSCopying , kSENDERNAME as! NSCopying , kDATE as! NSCopying , kSTATUS as! NSCopying , kTYPE as! NSCopying , kTHUMBNAIL as! NSCopying])
+        
+    }
     
     
     //MARK: sendMessage

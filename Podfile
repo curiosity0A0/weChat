@@ -9,7 +9,7 @@ pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'Firebase/Firestore'
-
+pod 'SVProgressHUD'
 pod 'ProgressHUD'
 pod 'MBProgressHUD'
 pod 'JSQMessagesViewController','7.3.3'

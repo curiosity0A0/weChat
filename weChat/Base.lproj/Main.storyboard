@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14306.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14278.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Map View View Controller-->
+        <scene sceneID="GGb-Rg-whi">
+            <objects>
+                <viewController storyboardIdentifier="MapViewViewController" id="WDO-cm-2iN" customClass="MapViewViewController" customModule="weChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sd3-S2-5N2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWD-0H-MFq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="MapView" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="53y-we-8Rr">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                    </mapView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.26522367294520549" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="53y-we-8Rr" secondAttribute="trailing" id="2jb-DL-X8P"/>
+                                    <constraint firstItem="53y-we-8Rr" firstAttribute="top" secondItem="MWD-0H-MFq" secondAttribute="top" id="6hL-jt-esb"/>
+                                    <constraint firstItem="53y-we-8Rr" firstAttribute="leading" secondItem="MWD-0H-MFq" secondAttribute="leading" id="dc9-48-XYK"/>
+                                    <constraint firstAttribute="bottom" secondItem="53y-we-8Rr" secondAttribute="bottom" id="lyA-du-KDa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MWD-0H-MFq" firstAttribute="leading" secondItem="xEP-Ux-CDV" secondAttribute="leading" id="32l-UV-Jdn"/>
+                            <constraint firstItem="MWD-0H-MFq" firstAttribute="trailing" secondItem="xEP-Ux-CDV" secondAttribute="trailing" id="4tn-jG-pvK"/>
+                            <constraint firstItem="MWD-0H-MFq" firstAttribute="top" secondItem="Sd3-S2-5N2" secondAttribute="top" id="ZNm-WF-xoy"/>
+                            <constraint firstAttribute="bottom" secondItem="MWD-0H-MFq" secondAttribute="bottom" id="vs1-lN-4OK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xEP-Ux-CDV"/>
+                    </view>
+                    <connections>
+                        <outlet property="MapView" destination="53y-we-8Rr" id="B1z-cS-mC7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MFt-OJ-5Ne" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5936.8000000000002" y="541.62561576354688"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -522,7 +563,7 @@ worry all of features are free!</string>
             </objects>
             <point key="canvasLocation" x="1799" y="134"/>
         </scene>
-        <!--Chats-->
+        <!--Your Chats-->
         <scene sceneID="AqK-Nw-k08">
             <objects>
                 <viewController id="myN-vf-No5" customClass="ChatsViewController" customModule="weChat" customModuleProvider="target" sceneMemberID="viewController">
@@ -628,8 +669,9 @@ worry all of features are free!</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="opr-Ye-24W"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Chats" id="72o-sr-LPt">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="Qgo-7m-PTi">
+                    <navigationItem key="navigationItem" title="Your Chats" id="72o-sr-LPt">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="Qgo-7m-PTi">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="GreateNewChatBtn:" destination="myN-vf-No5" id="ZrZ-F9-H59"/>
                             </connections>
@@ -872,20 +914,53 @@ worry all of features are free!</string>
             </objects>
             <point key="canvasLocation" x="6861.6000000000004" y="-124.13793103448276"/>
         </scene>
-        <!--Messages View Controller-->
-        <scene sceneID="pm4-fa-oBc">
+        <!--Picture Collection View Controller-->
+        <scene sceneID="fpe-sd-ea8">
             <objects>
-                <viewController id="gTs-nh-Voj" customClass="JSQMessagesViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GvA-8U-Y2W">
+                <collectionViewController storyboardIdentifier="PictureCollectionViewController" id="TAS-DB-Y0f" customClass="PictureCollectionViewController" customModule="weChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ZsS-lf-fRv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="qwb-Z6-fyO"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RrR-9D-m8C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Aei-N1-vKX">
+                            <size key="itemSize" width="105" height="105"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="25" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="jTx-FO-umb" customClass="PictureCollectionViewCell" customModule="weChat" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="105" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SwO-mM-fmT">
+                                            <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="SwO-mM-fmT" firstAttribute="width" secondItem="jTx-FO-umb" secondAttribute="width" id="HKq-Vi-xHM"/>
+                                    <constraint firstItem="SwO-mM-fmT" firstAttribute="centerY" secondItem="jTx-FO-umb" secondAttribute="centerY" id="IP6-hx-uVj"/>
+                                    <constraint firstItem="SwO-mM-fmT" firstAttribute="centerX" secondItem="jTx-FO-umb" secondAttribute="centerX" id="Ovn-pN-797"/>
+                                    <constraint firstItem="SwO-mM-fmT" firstAttribute="height" secondItem="jTx-FO-umb" secondAttribute="height" id="mO0-sX-lbF"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="SwO-mM-fmT" id="2hi-kf-c6d"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="TAS-DB-Y0f" id="UoV-Xp-ogl"/>
+                            <outlet property="delegate" destination="TAS-DB-Y0f" id="iJJ-ZY-ndL"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhc-lP-rXn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8393" y="-142"/>
+            <point key="canvasLocation" x="7839.1999999999998" y="141.87192118226602"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iLS-6E-EDv">

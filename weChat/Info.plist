@@ -51,5 +51,7 @@
 	<string>The app want to use your Microphone!</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>The app want to use your GPS!</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>The app want to use your GPS!</string>
 </dict>
 </plist>

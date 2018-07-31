@@ -8,11 +8,13 @@
 
 import UIKit
 import FirebaseFirestore
+import CoreLocation
 
-class ChatsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,RecentChatsCellDelegate,UISearchResultsUpdating{
+class ChatsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,RecentChatsCellDelegate,UISearchResultsUpdating,CLLocationManagerDelegate{
  
     
  
+    let appdelegate = UIApplication.shared.delegate as! AppDelegate
     
 
     @IBOutlet weak var tableView: UITableView!
@@ -32,7 +34,13 @@ class ChatsViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        appdelegate.locationManager? = CLLocationManager()
+        appdelegate.locationManager?.delegate = self
+        appdelegate.locationManager?.requestWhenInUseAuthorization()
         navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = .white
+        //get rid of black bar underneath navbar
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
@@ -218,7 +226,7 @@ class ChatsViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         constraints.append(NSLayoutConstraint(item: button, attribute: .right, relatedBy: .equal, toItem: buttonView, attribute: .right, multiplier: 1.0, constant: -8))
         NSLayoutConstraint.activate(constraints)
         headerView.addSubview(buttonView)
-        headerView.addSubview(lineView)
+//        headerView.addSubview(lineView)
         tableView.tableHeaderView = headerView
 
     }

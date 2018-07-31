@@ -36,6 +36,20 @@ class OutgoingMessages {
         
     }
     
+    //audio message
+    
+    init(message: String, audio: String, senderId: String , senderName: String , date:Date , status: String , type: String) {
+        messageDictionary = NSMutableDictionary(objects: [message,audio,senderId,senderName,dateFormatter().string(from: date),status,type], forKeys: [kMESSAGE as! NSCopying,kAUDIO as! NSCopying,kSENDERID as! NSCopying , kSENDERNAME as! NSCopying , kDATE as! NSCopying , kSTATUS as! NSCopying , kTYPE as! NSCopying ])
+        
+    }
+    
+    //location message
+    
+    
+    init(message: String, lat: NSNumber, long: NSNumber,senderId: String , senderName: String , date:Date , status: String , type: String) {
+        messageDictionary = NSMutableDictionary(objects: [message,lat,long,senderId,senderName,dateFormatter().string(from: date),status,type], forKeys: [kMESSAGE as! NSCopying,kLATITUDE as! NSCopying,kLONGITUDE as! NSCopying,kSENDERID as! NSCopying , kSENDERNAME as! NSCopying , kDATE as! NSCopying , kSTATUS as! NSCopying , kTYPE as! NSCopying ])
+        
+    }
     
     //MARK: sendMessage
     
@@ -54,16 +68,31 @@ class OutgoingMessages {
         
         
         //send push notificaiton
-        
-        
-        
+    }
+    
+    class func deleteMessage(withID : String , chatRoomId: String) {
         
     }
     
+    class func updatMessage(withId: String, chatRoomId: String , memberIds: [String]){
+        
+        let readDate = dateFormatter().string(from: Date())
+        let values = [kSTATUS: kREAD , kREADDATE: readDate]
+        for userid in memberIds {
+            
+            reference(.Message).document(userid).collection(chatRoomId).document(withId).getDocument { (snapShot, error) in
+                
+                guard let snapshot = snapShot else { return }
+                
+                if snapshot.exists {
+                    reference(.Message).document(userid).collection(chatRoomId).document(withId).updateData(values)
+                }
+                
+                
+            }
+        }
+        
+    }
     
-    
-    
-    
-    
-    
+
 }

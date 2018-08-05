@@ -65,13 +65,13 @@ class OutgoingMessages {
         }
         
         //update Recent Chat
-        
+            updateRecent(chatRoomId: chatRoomId, lastMessage: messageDictionary[kMESSAGE] as! String)
         
         //send push notificaiton
     }
     
     class func deleteMessage(withID : String , chatRoomId: String) {
-        
+            reference(.Message).document(FUser.currentId()).collection(chatRoomId).document(withID).delete()
     }
     
     class func updatMessage(withId: String, chatRoomId: String , memberIds: [String]){

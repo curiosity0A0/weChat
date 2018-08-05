@@ -333,7 +333,6 @@ func fetchCurrentUserFromFirestore(userId: String) {
         guard let snapshot = snapshot else {  return }
         
         if snapshot.exists {
-            print("updated current users param")
             
             UserDefaults.standard.setValue(snapshot.data() as! NSDictionary, forKeyPath: kCURRENTUSER)
             UserDefaults.standard.synchronize()
@@ -481,4 +480,8 @@ func updateCurrentUserOneSignalId(newId: String) {
 }
 
 
+//MARK: Chaeck User block status
 
+func checkBlockedStatus(withUser:FUser) -> Bool {
+    return withUser.blockedUsers.contains(FUser.currentId())
+}

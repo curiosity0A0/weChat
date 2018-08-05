@@ -14,6 +14,7 @@ import AVFoundation
 import AVKit
 import FirebaseFirestore
 import ProgressHUD
+import SVProgressHUD
 
 
 
@@ -87,6 +88,14 @@ class ChatViewController: JSQMessagesViewController, UIGestureRecognizerDelegate
     }()
     
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        clearRecentCounter(chatRoomId: chatRoomId)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        clearRecentCounter(chatRoomId: chatRoomId)
+    }
+    
       //fix for iphone x
     override func viewDidLayoutSubviews() {
         perform(Selector(("jsq_updateCollectionViewInsets")))
@@ -96,9 +105,10 @@ class ChatViewController: JSQMessagesViewController, UIGestureRecognizerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        shouldPresentLoadingView(true)
+        SVProgressHUD.show()
         
         createTypingObserver()
+        JSQMessagesCollectionViewCell.registerMenuAction(#selector(delete))
         
         navigationItem.largeTitleDisplayMode = .never
         self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "Back"), style: .plain, target: self, action: #selector(self.backAction))]
@@ -449,8 +459,36 @@ class ChatViewController: JSQMessagesViewController, UIGestureRecognizerDelegate
         //show user profile
         presentUserProfile(forUser: selectedUser!)
     }
+    //for multimedia messages
     
+    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+        super.collectionView(collectionView, shouldShowMenuForItemAt: indexPath)
+        return true
+    }
     
+    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        if messages[indexPath.row].isMediaMessage{
+            if action.description == "delete:"{
+                return true
+            }else{
+                return false
+            }
+        }else{
+            if action.description == "delete:" || action.description == "copy:"{
+                return true
+            }else{
+                return false
+            }
+        }
+    }
+    
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, didDeleteMessageAt indexPath: IndexPath!) {
+        let messageId = objectMessage[indexPath.row][kMESSAGEID] as! String
+        objectMessage.remove(at: indexPath.row)
+        messages.remove(at: indexPath.row)
+        //delete from firebase
+        OutgoingMessages.deleteMessage(withID: messageId, chatRoomId: chatRoomId)
+    }
     
     
     //MARK: send Messages
@@ -623,7 +661,7 @@ class ChatViewController: JSQMessagesViewController, UIGestureRecognizerDelegate
             
             guard let snapshot = snapShot else {
                 self.initialLoadCompleted = true
-                self.shouldPresentLoadingView(false)
+                 SVProgressHUD.dismiss()
                 self.listenForNewChat()
                 return
             }
@@ -636,8 +674,7 @@ class ChatViewController: JSQMessagesViewController, UIGestureRecognizerDelegate
             self.insertMessages()
             self.finishReceivingMessage(animated: true)
             self.initialLoadCompleted = true
-            self.shouldPresentLoadingView(false)
-            
+                 SVProgressHUD.dismiss()
             self.getPictureMessages()
             
             //get old messages in backgroud
@@ -786,6 +823,7 @@ class ChatViewController: JSQMessagesViewController, UIGestureRecognizerDelegate
     
     //MARK: -IBACTION
     @objc func backAction() {
+        clearRecentCounter(chatRoomId: chatRoomId)
         removeListeners()
         navigationController?.popViewController(animated: true)
  
@@ -1176,7 +1214,7 @@ extension JSQMessagesInputToolbar {
 extension ChatViewController: IQAudioRecorderViewControllerDelegate {
     func audioRecorderController(_ controller: IQAudioRecorderViewController, didFinishWithAudioAtPath filePath: String) {
          controller.dismiss(animated: true, completion: nil)
-        print(filePath)
+  
         self.sendMessage(text: nil, date: Date(), picture: nil, location: nil, video: nil, audio: filePath)
         
     }

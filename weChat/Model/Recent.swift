@@ -124,6 +124,47 @@ func restaratRecentChat(recent: NSDictionary) {
     
 }
 
+//updateRecent
+
+func updateRecent(chatRoomId: String,lastMessage: String) {
+    
+    reference(.Recent).whereField(kCHATROOMID, isEqualTo: chatRoomId).getDocuments { (snapShot, error) in
+        guard let snapshot = snapShot else{ return }
+        
+        if !snapshot.isEmpty{
+            
+            for recent in snapshot.documents {
+                let currentRecent = recent.data() as NSDictionary
+                
+                updateRecentItem(recent: currentRecent, lastMessage: lastMessage)
+                
+            }
+            
+        }
+    }
+    
+}
+
+
+
+
+func updateRecentItem(recent: NSDictionary,lastMessage:String) {
+    
+    let date = dateFormatter().string(from: Date())
+    var counter = recent[kCOUNTER] as! Int
+    if recent[kUSERID] as? String != FUser.currentId() {
+        
+        counter += 1
+    }
+    let values = [kLASTMESSAGE: lastMessage , kCOUNTER : counter , kDATE: date] as! [String:Any]
+    reference(.Recent).document(recent[kRECENTID] as! String).updateData(values)
+    
+    
+    
+    
+    
+    
+}
 
 
 
@@ -139,4 +180,94 @@ func deleteRecentChat(recentChatDic: NSDictionary){
         reference(.Recent).document(recentId as! String).delete()
     }
 
+}
+
+
+//clear counter
+
+func clearRecentCounter(chatRoomId: String) {
+    
+    reference(.Recent).whereField(kCHATROOMID, isEqualTo: chatRoomId).getDocuments { (snapShot, error) in
+        guard let snapshot = snapShot else{ return }
+        
+        if !snapshot.isEmpty{
+            
+            for recent in snapshot.documents {
+                let currentRecent = recent.data() as NSDictionary
+                if currentRecent[kUSERID] as? String == FUser.currentId() {
+                    clearRecentCounterItem(recent: currentRecent)
+                }
+            }
+            
+        }
+    }
+    
+}
+
+
+func clearRecentCounterItem(recent: NSDictionary){
+    reference(.Recent).document(recent[kRECENTID] as! String).updateData([kCOUNTER:0])
+}
+
+func updateExistingRecentWithNewValue(chatRoomID:String,members: [String], withValue: [String:Any]){
+    
+    reference(.Recent).whereField(kCHATROOMID, isEqualTo: chatRoomID).getDocuments { (snapshot, error) in
+        guard let snapShot = snapshot else { return }
+        
+        
+        if !snapShot.isEmpty{
+            
+            for recent in snapShot.documents {
+                let recent = recent.data() as NSDictionary
+                updateRecent(recentID: recent[kRECENTID] as! String, withValue: withValue)
+                
+            }
+        }
+        
+        
+    }
+    
+    
+}
+
+func updateRecent(recentID:String , withValue: [String:Any]){
+    
+    reference(.Recent).document(recentID).updateData(withValue)
+}
+
+func blockUser(userToBlock: FUser){
+    
+    let userid1 = FUser.currentId()
+    let userid2 = userToBlock.objectId
+    var chatRoomID = ""
+    let value = userid1.compare(userid2).rawValue
+    
+    if value < 0 {
+        
+        chatRoomID = userid1 + userid2
+    }else{
+        chatRoomID = userid2 + userid1
+    }
+    
+    getRecentsFor(ChatRoomId: chatRoomID)
+
+}
+
+func getRecentsFor(ChatRoomId: String ){
+    reference(.Recent).whereField(kCHATROOMID, isEqualTo: ChatRoomId).getDocuments { (snapshot, error) in
+        guard let snapShot = snapshot else { return }
+        
+        
+        if !snapShot.isEmpty{
+            
+            for recent in snapShot.documents {
+                let recent = recent.data() as NSDictionary
+                deleteRecentChat(recentChatDic: recent)
+                
+            }
+        }
+        
+        
+    }
+    
 }

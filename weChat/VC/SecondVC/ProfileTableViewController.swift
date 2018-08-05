@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ProfileTableViewController: UITableViewController {
 
@@ -73,8 +74,23 @@ class ProfileTableViewController: UITableViewController {
    
     
     @IBAction func messageBtnPressed(_ sender: Any) {
+        if !checkBlockedStatus(withUser: user!) {
+            let chatVC = ChatViewController()
+            chatVC.titleName = user!.firstname
+            chatVC.memberidsToPush = [FUser.currentId(),user!.objectId]
+            chatVC.memberids = [FUser.currentId(),user!.objectId]
+            chatVC.chatRoomId = startPrivateChat(user1: FUser.currentUser()!, user2: user!)
+            chatVC.isGroup = false
+            chatVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(chatVC, animated: true)
+            
+        }else{
+            
+            SVProgressHUD.showError(withStatus: "This user is not available for chat!")
+            
+        }
         
-        print("chat user\(user!.fullname)")
+       
     }
     
     @IBAction func callBtnPressed(_ sender: Any) {
@@ -107,7 +123,7 @@ class ProfileTableViewController: UITableViewController {
             
         }
         
-        
+        blockUser(userToBlock: user!)
         
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-import ProgressHUD
+import SVProgressHUD
 
 class UsersTabelViewController: UITableViewController,UISearchResultsUpdating,UserTabelCellDelegate{
  
@@ -137,8 +137,22 @@ class UsersTabelViewController: UITableViewController,UISearchResultsUpdating,Us
         }
         
         //
-        
-        startPrivateChat(user1: FUser.currentUser()!, user2: user)
+        if !checkBlockedStatus(withUser: user) {
+           let chatVC = ChatViewController()
+                chatVC.titleName = user.firstname
+                chatVC.memberidsToPush = [FUser.currentId(),user.objectId]
+                chatVC.memberids = [FUser.currentId(),user.objectId]
+                chatVC.chatRoomId = startPrivateChat(user1: FUser.currentUser()!, user2: user)
+                chatVC.isGroup = false
+                chatVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(chatVC, animated: true)
+            
+        }else{
+            
+            SVProgressHUD.showError(withStatus: "This user is not available for chat!")
+            
+        }
+      
         
         
     }
@@ -149,7 +163,7 @@ class UsersTabelViewController: UITableViewController,UISearchResultsUpdating,Us
     
     func loadUsers(filter: String) {
         
-        ProgressHUD.show()
+        SVProgressHUD.show()
         var query: Query!
         
         switch filter {
@@ -170,14 +184,14 @@ class UsersTabelViewController: UITableViewController,UISearchResultsUpdating,Us
             
             if error != nil {
                 DispatchQueue.main.async {
-                    ProgressHUD.dismiss()
+                     SVProgressHUD.dismiss()
                     print(error?.localizedDescription)
                     self.tableView.reloadData()
                     return
                 }
             }
             
-            guard let snapshot = snapShot else { ProgressHUD.dismiss();return }
+            guard let snapshot = snapShot else {SVProgressHUD.dismiss();return }
             
             if !snapshot.isEmpty {
                 
@@ -200,7 +214,7 @@ class UsersTabelViewController: UITableViewController,UISearchResultsUpdating,Us
             
             }
             self.tableView.reloadData()
-            ProgressHUD.dismiss()
+            SVProgressHUD.dismiss()
         }
 
     }

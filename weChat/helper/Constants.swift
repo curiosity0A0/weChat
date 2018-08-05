@@ -24,7 +24,7 @@ public let kFILEREFERENCE = "gs://wechat-d4d80.appspot.com"
 public let kONESIGNALAPPID = ""
 public let kSINCHKEY = ""
 public let kSINCHSECRET = ""
-public let kAPPURL = ""
+public let kAPPURL = "App Link."
 
 
 

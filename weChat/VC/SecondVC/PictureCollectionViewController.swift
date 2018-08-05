@@ -8,6 +8,7 @@
 
 import UIKit
 import IDMPhotoBrowser
+import SVProgressHUD
 class PictureCollectionViewController: UICollectionViewController {
 
     var allImages:[UIImage] = []
@@ -16,7 +17,7 @@ class PictureCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     self.navigationItem.title = "All Pictures"
-    self.shouldPresentLoadingView(true)
+        SVProgressHUD.show()
         if allImageLinks.count > 0 {
             //download image
             downLoadImages()
@@ -74,7 +75,7 @@ class PictureCollectionViewController: UICollectionViewController {
                     
                     self.allImages.append(image!)
                     self.collectionView.reloadData()
-                    self.shouldPresentLoadingView(false)
+                        SVProgressHUD.dismiss()
                 }
                 
             }

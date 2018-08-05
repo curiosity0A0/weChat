@@ -27,6 +27,7 @@
 		88BBE6C520FF6B7700A6EF7B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BBE6C420FF6B7700A6EF7B /* ChatViewController.swift */; };
 		88C8749D20FC4ACF00CB5BC6 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C8749C20FC4ACF00CB5BC6 /* LoginPage.swift */; };
 		88D07ACC21079BCF008708C7 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07ACB21079BCF008708C7 /* Download.swift */; };
+		88D0CD172116A402000B40EA /* BlockedUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D0CD162116A402000B40EA /* BlockedUserViewController.swift */; };
 		88D8EF86210A59CD00521CAD /* videoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D8EF85210A59CD00521CAD /* videoMessage.swift */; };
 		88E201E820FC53E900DF2740 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88E201E720FC53E900DF2740 /* GoogleService-Info.plist */; };
 		88EEF6C32101C33E00BD248B /* outgoingMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEF6C22101C33E00BD248B /* outgoingMessages.swift */; };
@@ -66,6 +67,7 @@
 		88BBE6C420FF6B7700A6EF7B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		88C8749C20FC4ACF00CB5BC6 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		88D07ACB21079BCF008708C7 /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
+		88D0CD162116A402000B40EA /* BlockedUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUserViewController.swift; sourceTree = "<group>"; };
 		88D8EF85210A59CD00521CAD /* videoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoMessage.swift; sourceTree = "<group>"; };
 		88E201E720FC53E900DF2740 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		88EEF6C22101C33E00BD248B /* outgoingMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outgoingMessages.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				88BBE6C420FF6B7700A6EF7B /* ChatViewController.swift */,
 				8808623F210D33560069537C /* MapViewViewController.swift */,
 				881811D721110DAB0072DA81 /* PictureCollectionViewController.swift */,
+				88D0CD162116A402000B40EA /* BlockedUserViewController.swift */,
 			);
 			path = SecondVC;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				8857FCE320FDAA3800E7C365 /* UsersTabelViewController.swift in Sources */,
 				88B0B85D20FE1F4100DE5C63 /* RecentChatsCell.swift in Sources */,
 				88FDEBEC20FC5BC100264FED /* HelperFunctions.swift in Sources */,
+				88D0CD172116A402000B40EA /* BlockedUserViewController.swift in Sources */,
 				881811DA21110DF20072DA81 /* PictureCollectionViewCell.swift in Sources */,
 				88F3EBDD20FDB96700C2217A /* ChatsViewController.swift in Sources */,
 				88FDEBE520FC5A3B00264FED /* Fuser.swift in Sources */,

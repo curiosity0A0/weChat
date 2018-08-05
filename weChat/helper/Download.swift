@@ -11,6 +11,7 @@ import FirebaseStorage
 import Firebase
 import MBProgressHUD
 import AVFoundation
+import SVProgressHUD
 
 
 let storage = Storage.storage()
@@ -51,6 +52,7 @@ func uploadImage(image:UIImage, chatRoomId: String , view: UIView ,completion: @
     
     task.observe(StorageTaskStatus.progress) { (snapShot) in
         progressHUD.progress = Float((snapShot.progress?.completedUnitCount)!) / Float((snapShot.progress?.totalUnitCount)!)
+
     }
 }
 
@@ -312,13 +314,11 @@ func downLoadAudio(audioURl: String , completion:@escaping(_ audioFillName:Strin
 
 func fileInDocumentsDirectory(fileName: String) -> String {
     let fileUrl = getDocumentURL().appendingPathComponent(fileName)
-           print("fileUrl \(fileUrl)")
+           
     return fileUrl.path
 }
 
 func getDocumentURL() -> URL {
-      let documentURLfISTERT = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-  
     let documentURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last
   
     return documentURL!

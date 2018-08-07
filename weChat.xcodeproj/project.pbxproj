@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2EC4E3B4A56DFC7FA73A4F43 /* Pods_weChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B645BC2F6E56374675AA14E7 /* Pods_weChat.framework */; };
+		88030D8F211A4B0A0063DF5F /* MyGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88030D8E211A4B0A0063DF5F /* MyGroup.swift */; };
 		88086240210D33560069537C /* MapViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8808623F210D33560069537C /* MapViewViewController.swift */; };
 		881811D821110DAB0072DA81 /* PictureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881811D721110DAB0072DA81 /* PictureCollectionViewController.swift */; };
 		881811DA21110DF20072DA81 /* PictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881811D921110DF20072DA81 /* PictureCollectionViewCell.swift */; };
@@ -28,6 +29,13 @@
 		88C8749D20FC4ACF00CB5BC6 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C8749C20FC4ACF00CB5BC6 /* LoginPage.swift */; };
 		88D07ACC21079BCF008708C7 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07ACB21079BCF008708C7 /* Download.swift */; };
 		88D0CD172116A402000B40EA /* BlockedUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D0CD162116A402000B40EA /* BlockedUserViewController.swift */; };
+		88D26F9B2118BABB0040B8C0 /* BackgroundCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D26F9A2118BABB0040B8C0 /* BackgroundCollectionViewController.swift */; };
+		88D26F9D2118BADF0040B8C0 /* BGCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D26F9C2118BADF0040B8C0 /* BGCollectionViewCell.swift */; };
+		88D26F9F2118E15B0040B8C0 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D26F9E2118E15B0040B8C0 /* EditProfile.swift */; };
+		88D26FA12118FB430040B8C0 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D26FA02118FB430040B8C0 /* ContactsTableViewController.swift */; };
+		88D26FA3211909790040B8C0 /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D26FA2211909790040B8C0 /* CountryCode.swift */; };
+		88D26FA5211A35EF0040B8C0 /* GroupMembersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D26FA4211A35EF0040B8C0 /* GroupMembersCollectionViewCell.swift */; };
+		88D26FA7211A38240040B8C0 /* newGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D26FA6211A38240040B8C0 /* newGroupViewController.swift */; };
 		88D8EF86210A59CD00521CAD /* videoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D8EF85210A59CD00521CAD /* videoMessage.swift */; };
 		88E201E820FC53E900DF2740 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88E201E720FC53E900DF2740 /* GoogleService-Info.plist */; };
 		88EEF6C32101C33E00BD248B /* outgoingMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEF6C22101C33E00BD248B /* outgoingMessages.swift */; };
@@ -46,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		2F6B59710A1EB17B67A06680 /* Pods-weChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weChat/Pods-weChat.debug.xcconfig"; sourceTree = "<group>"; };
+		88030D8E211A4B0A0063DF5F /* MyGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroup.swift; sourceTree = "<group>"; };
 		8808623F210D33560069537C /* MapViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewViewController.swift; sourceTree = "<group>"; };
 		881811D721110DAB0072DA81 /* PictureCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCollectionViewController.swift; sourceTree = "<group>"; };
 		881811D921110DF20072DA81 /* PictureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -68,6 +77,13 @@
 		88C8749C20FC4ACF00CB5BC6 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		88D07ACB21079BCF008708C7 /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
 		88D0CD162116A402000B40EA /* BlockedUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUserViewController.swift; sourceTree = "<group>"; };
+		88D26F9A2118BABB0040B8C0 /* BackgroundCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCollectionViewController.swift; sourceTree = "<group>"; };
+		88D26F9C2118BADF0040B8C0 /* BGCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGCollectionViewCell.swift; sourceTree = "<group>"; };
+		88D26F9E2118E15B0040B8C0 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
+		88D26FA02118FB430040B8C0 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		88D26FA2211909790040B8C0 /* CountryCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
+		88D26FA4211A35EF0040B8C0 /* GroupMembersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMembersCollectionViewCell.swift; sourceTree = "<group>"; };
+		88D26FA6211A38240040B8C0 /* newGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newGroupViewController.swift; sourceTree = "<group>"; };
 		88D8EF85210A59CD00521CAD /* videoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoMessage.swift; sourceTree = "<group>"; };
 		88E201E720FC53E900DF2740 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		88EEF6C22101C33E00BD248B /* outgoingMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outgoingMessages.swift; sourceTree = "<group>"; };
@@ -167,6 +183,8 @@
 				8857FCE020FDA60400E7C365 /* UserTabelCell.swift */,
 				88B0B85C20FE1F4100DE5C63 /* RecentChatsCell.swift */,
 				881811D921110DF20072DA81 /* PictureCollectionViewCell.swift */,
+				88D26F9C2118BADF0040B8C0 /* BGCollectionViewCell.swift */,
+				88D26FA4211A35EF0040B8C0 /* GroupMembersCollectionViewCell.swift */,
 			);
 			path = CellView;
 			sourceTree = "<group>";
@@ -190,6 +208,10 @@
 				8808623F210D33560069537C /* MapViewViewController.swift */,
 				881811D721110DAB0072DA81 /* PictureCollectionViewController.swift */,
 				88D0CD162116A402000B40EA /* BlockedUserViewController.swift */,
+				88D26F9A2118BABB0040B8C0 /* BackgroundCollectionViewController.swift */,
+				88D26F9E2118E15B0040B8C0 /* EditProfile.swift */,
+				88D26FA02118FB430040B8C0 /* ContactsTableViewController.swift */,
+				88D26FA6211A38240040B8C0 /* newGroupViewController.swift */,
 			);
 			path = SecondVC;
 			sourceTree = "<group>";
@@ -223,6 +245,7 @@
 				8856FD7A2108EF0400360F9D /* PhotoMediaItem.swift */,
 				88D8EF85210A59CD00521CAD /* videoMessage.swift */,
 				88F2A977210CE5CA00116E78 /* AudioViewController.swift */,
+				88030D8E211A4B0A0063DF5F /* MyGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,6 +258,7 @@
 				88FDEBEB20FC5BC100264FED /* HelperFunctions.swift */,
 				8885EC132106464000A87315 /* Camera.swift */,
 				88D07ACB21079BCF008708C7 /* Download.swift */,
+				88D26FA2211909790040B8C0 /* CountryCode.swift */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -394,14 +418,19 @@
 			files = (
 				88F3EBDF20FDF8A100C2217A /* ProfileTableViewController.swift in Sources */,
 				88EEF6C32101C33E00BD248B /* outgoingMessages.swift in Sources */,
+				88D26FA5211A35EF0040B8C0 /* GroupMembersCollectionViewCell.swift in Sources */,
+				88D26F9F2118E15B0040B8C0 /* EditProfile.swift in Sources */,
 				881811DD21111A1A0072DA81 /* UIViewControllerEXT.swift in Sources */,
 				88FDEBE720FC5B5000264FED /* FCollectionReference.swift in Sources */,
 				8857FCE120FDA60400E7C365 /* UserTabelCell.swift in Sources */,
+				88D26F9D2118BADF0040B8C0 /* BGCollectionViewCell.swift in Sources */,
 				88EEF6C52101D93D00BD248B /* incomingMessages.swift in Sources */,
+				88D26FA3211909790040B8C0 /* CountryCode.swift in Sources */,
 				88F2A978210CE5CA00116E78 /* AudioViewController.swift in Sources */,
 				8857FCE320FDAA3800E7C365 /* UsersTabelViewController.swift in Sources */,
 				88B0B85D20FE1F4100DE5C63 /* RecentChatsCell.swift in Sources */,
 				88FDEBEC20FC5BC100264FED /* HelperFunctions.swift in Sources */,
+				88D26F9B2118BABB0040B8C0 /* BackgroundCollectionViewController.swift in Sources */,
 				88D0CD172116A402000B40EA /* BlockedUserViewController.swift in Sources */,
 				881811DA21110DF20072DA81 /* PictureCollectionViewCell.swift in Sources */,
 				88F3EBDD20FDB96700C2217A /* ChatsViewController.swift in Sources */,
@@ -417,10 +446,13 @@
 				8820F8A320F7BBE600807B3F /* ShowCell.swift in Sources */,
 				88086240210D33560069537C /* MapViewViewController.swift in Sources */,
 				88FDEBE920FC5B7200264FED /* Constants.swift in Sources */,
+				88D26FA12118FB430040B8C0 /* ContactsTableViewController.swift in Sources */,
+				88030D8F211A4B0A0063DF5F /* MyGroup.swift in Sources */,
 				8885EC142106464000A87315 /* Camera.swift in Sources */,
 				8820F89320F7BAF400807B3F /* ViewController.swift in Sources */,
 				881811D821110DAB0072DA81 /* PictureCollectionViewController.swift in Sources */,
 				88B0B85B20FE12EB00DE5C63 /* Recent.swift in Sources */,
+				88D26FA7211A38240040B8C0 /* newGroupViewController.swift in Sources */,
 				8820F89120F7BAF400807B3F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

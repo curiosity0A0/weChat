@@ -51,8 +51,7 @@ class ChatsViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
     @IBAction func GreateNewChatBtn(_ sender: UIBarButtonItem) {
         
-        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UsersTabelViewController") as! UsersTabelViewController
-          navigationController?.pushViewController(vc, animated: true)
+        selectUserForChat(isGroup: false)
     }
     
     //MARK: TABEL VIEW DATA SOURCE
@@ -232,9 +231,8 @@ class ChatsViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     @objc func groupBtnPressed(){
-        print("hello")
-        
-        
+        selectUserForChat(isGroup: true)
+
     }
     
     //MARK: RecentChats Cell Delegate
@@ -299,6 +297,14 @@ class ChatsViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
 
     //MARK: HELPER func
+    
+    func selectUserForChat(isGroup: Bool){
+        
+        let contactsVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "contactView")as! ContactsTableViewController
+            contactsVC.isGroup = isGroup
+        self.navigationController?.pushViewController(contactsVC, animated: true)
+    }
+    
     
     func updatePushMembers(recent: NSDictionary , mute: Bool) {
         var membersToPush = recent[kMEMBERSTOPUSH] as! [String]

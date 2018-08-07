@@ -53,5 +53,7 @@
 	<string>The app want to use your GPS!</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>The app want to use your GPS!</string>
+	<key>NSContactsUsageDescription</key>
+	<string>The app want to use your contacts!</string>
 </dict>
 </plist>

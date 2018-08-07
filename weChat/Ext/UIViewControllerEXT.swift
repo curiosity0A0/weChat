@@ -30,6 +30,10 @@ extension UIViewController {
             spinner.center = view.center
             view.addSubview(fadeVeiw!)
             fadeVeiw?.addSubview(spinner)
+            NSLayoutConstraint.activate([
+                spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+                ])
             spinner.startAnimating()
             fadeVeiw?.fadeTo(alphaValue: 0.7, withDuration: 0.2)
             

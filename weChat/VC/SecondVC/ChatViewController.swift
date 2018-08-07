@@ -118,7 +118,9 @@ class ChatViewController: JSQMessagesViewController, UIGestureRecognizerDelegate
  
         jsqAvaTarDictionary = [:]
         
-        
+        if isGroup! {
+            getCurrentGroup(withId: chatRoomId)
+        }
         
         setCustomTitle()
         
@@ -1005,6 +1007,21 @@ class ChatViewController: JSQMessagesViewController, UIGestureRecognizerDelegate
         }
 
     }
+    
+    func setUIForGroupChat(){
+        imageFromData(pictureData: group![kAVATAR] as! String) { (image) in
+            if image != nil {
+                DispatchQueue.main.async {
+                self.avatarBtn.setImage(image!.circleMasked, for: .normal)
+                }
+            }
+        }
+        
+        titileLabel.text = titleName   
+        titileLabel.frame = CGRect(x: 30, y: 15, width: 140, height: 15)
+        
+        subtitle.text = ""
+    }
 
     //MARK: CustomSendBtn
     
@@ -1189,6 +1206,18 @@ class ChatViewController: JSQMessagesViewController, UIGestureRecognizerDelegate
         
     }
     
+    
+    func getCurrentGroup(withId: String){
+        reference(.Group).document(withId).getDocument { (snapShot, error) in
+            guard let snapshot = snapShot else { return }
+            
+            if snapshot.exists {
+                self.group = snapshot.data() as! NSDictionary
+                self.setUIForGroupChat()
+            }
+            
+        }
+    }
     
     
 

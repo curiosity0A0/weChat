@@ -60,7 +60,7 @@ func createRecent(members: [String],chatroomID: String, withUserUserName: String
         for userId in tempMembers {
             
             //create recent Items
-            createRecentItems(userid: userId, chatRoomId: chatroomID, members: members, withUserUserName: withUserUserName, type: type, users: users, avatarOfGroup: nil)
+            createRecentItems(userid: userId, chatRoomId: chatroomID, members: members, withUserUserName: withUserUserName, type: type, users: users, avatarOfGroup: avatarOfGroup)
         }
     }
 
@@ -106,6 +106,23 @@ func createRecentItems(userid: String , chatRoomId: String , members: [String] ,
     
     
 }
+
+//group
+func startGroupChat(group:Group){
+    let chatRoomId = group.groupDictionary[kGROUPID] as! String
+    let members = group.groupDictionary[kMEMBERS] as! [String]
+    
+    createRecent(members: members, chatroomID: chatRoomId, withUserUserName: group.groupDictionary[kNAME] as! String, type: kGROUP, users: nil, avatarOfGroup: group.groupDictionary[kAVATAR] as? String)
+}
+func createRecentsForNewMembers(groupID:String , groupName: String , memberToPush:[String],avatar: String){
+    
+    createRecent(members: memberToPush, chatroomID: groupID, withUserUserName: groupName, type: kGROUP, users: nil, avatarOfGroup: avatar)
+}
+
+
+
+
+
 
 //Restart chat
 

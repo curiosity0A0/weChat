@@ -841,7 +841,12 @@ class ChatViewController: JSQMessagesViewController, UIGestureRecognizerDelegate
     }
     
     @objc func showGroup(){
-           print("show Group")
+        
+        let groupVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GroupViewController") as! GroupViewController
+        
+            groupVC.group = group!
+            self.navigationController?.pushViewController(groupVC, animated: true)
+        
     }
     
     @objc func showUserProfile(){

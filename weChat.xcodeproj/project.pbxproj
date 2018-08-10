@@ -19,6 +19,8 @@
 		8820F89620F7BAF400807B3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8820F89420F7BAF400807B3F /* Main.storyboard */; };
 		8820F89B20F7BAF400807B3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8820F89920F7BAF400807B3F /* LaunchScreen.storyboard */; };
 		8820F8A320F7BBE600807B3F /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820F8A220F7BBE600807B3F /* ShowCell.swift */; };
+		8850B3A0211D609D003DF8E2 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8850B39F211D609D003DF8E2 /* GroupViewController.swift */; };
+		8850B3A4211D66E1003DF8E2 /* InviteUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8850B3A3211D66E1003DF8E2 /* InviteUserViewController.swift */; };
 		8856FD7B2108EF0400360F9D /* PhotoMediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8856FD7A2108EF0400360F9D /* PhotoMediaItem.swift */; };
 		8857FCE120FDA60400E7C365 /* UserTabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857FCE020FDA60400E7C365 /* UserTabelCell.swift */; };
 		8857FCE320FDAA3800E7C365 /* UsersTabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8857FCE220FDAA3800E7C365 /* UsersTabelViewController.swift */; };
@@ -67,6 +69,8 @@
 		8820F89A20F7BAF400807B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8820F89C20F7BAF400807B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8820F8A220F7BBE600807B3F /* ShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCell.swift; sourceTree = "<group>"; };
+		8850B39F211D609D003DF8E2 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		8850B3A3211D66E1003DF8E2 /* InviteUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteUserViewController.swift; sourceTree = "<group>"; };
 		8856FD7A2108EF0400360F9D /* PhotoMediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMediaItem.swift; sourceTree = "<group>"; };
 		8857FCE020FDA60400E7C365 /* UserTabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabelCell.swift; sourceTree = "<group>"; };
 		8857FCE220FDAA3800E7C365 /* UsersTabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTabelViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				88D26F9E2118E15B0040B8C0 /* EditProfile.swift */,
 				88D26FA02118FB430040B8C0 /* ContactsTableViewController.swift */,
 				88D26FA6211A38240040B8C0 /* newGroupViewController.swift */,
+				8850B39F211D609D003DF8E2 /* GroupViewController.swift */,
+				8850B3A3211D66E1003DF8E2 /* InviteUserViewController.swift */,
 			);
 			path = SecondVC;
 			sourceTree = "<group>";
@@ -430,6 +436,7 @@
 				8857FCE320FDAA3800E7C365 /* UsersTabelViewController.swift in Sources */,
 				88B0B85D20FE1F4100DE5C63 /* RecentChatsCell.swift in Sources */,
 				88FDEBEC20FC5BC100264FED /* HelperFunctions.swift in Sources */,
+				8850B3A4211D66E1003DF8E2 /* InviteUserViewController.swift in Sources */,
 				88D26F9B2118BABB0040B8C0 /* BackgroundCollectionViewController.swift in Sources */,
 				88D0CD172116A402000B40EA /* BlockedUserViewController.swift in Sources */,
 				881811DA21110DF20072DA81 /* PictureCollectionViewCell.swift in Sources */,
@@ -452,6 +459,7 @@
 				8820F89320F7BAF400807B3F /* ViewController.swift in Sources */,
 				881811D821110DAB0072DA81 /* PictureCollectionViewController.swift in Sources */,
 				88B0B85B20FE12EB00DE5C63 /* Recent.swift in Sources */,
+				8850B3A0211D609D003DF8E2 /* GroupViewController.swift in Sources */,
 				88D26FA7211A38240040B8C0 /* newGroupViewController.swift in Sources */,
 				8820F89120F7BAF400807B3F /* AppDelegate.swift in Sources */,
 			);
